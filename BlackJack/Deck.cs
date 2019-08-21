@@ -1,11 +1,11 @@
 ﻿using System;
 
-
 namespace BlackJack
 {
     public struct Deck
     {
         public static int UsedCards;
+
         public static Card[] CreateDeck()
         {
             Card[] deck = new Card[36];
@@ -17,8 +17,10 @@ namespace BlackJack
                     deck[index] = new Card((CardName)cardName, (Suit)cardSuit);
                 }
             }
+
             return deck;
         }
+
         public static Card[] ShuffleDeck(Card[] deck)
         {
             Random random = new Random();
@@ -33,6 +35,7 @@ namespace BlackJack
 
             return deck;
         }
+
         public static void ShowDeck(Card[] deck)
         {
             foreach (Card c in deck)

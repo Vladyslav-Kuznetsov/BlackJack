@@ -5,10 +5,12 @@
         public int Points;
         public CardName Name;
         public Suit Suit;
+
         public Card(CardName cardName, Suit suit)
         {
             Name = cardName;
             Suit = suit;
+
             switch(Name)
             {
                 case CardName.Six:
