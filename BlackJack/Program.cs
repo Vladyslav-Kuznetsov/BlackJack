@@ -26,7 +26,7 @@ namespace BlackJack
                             Deck.UsedCards = player.GetTwoCards(deck, Deck.UsedCards);
                             Deck.UsedCards = computer.GetTwoCards(deck, Deck.UsedCards);
                             Deck.UsedCards = player.GetCard(deck, Deck.UsedCards);
-                            Deck.UsedCards = computer.GetCard(deck, Deck.UsedCards);
+                            Deck.UsedCards = computer.GetCard(deck, Deck.UsedCards, player);
                             break;
                         case "comp":
                             Console.WriteLine(2);
@@ -38,9 +38,9 @@ namespace BlackJack
 
 
 
-                Deck.UsedCards = player.GetTwoCards(deck, Deck.UsedCards);
+                //Deck.UsedCards = player.GetTwoCards(deck, Deck.UsedCards);
 
-                Deck.UsedCards = player.GetCard(deck, Deck.UsedCards);
+                //Deck.UsedCards = player.GetCard(deck, Deck.UsedCards);
 
 
                 Console.ReadLine();
