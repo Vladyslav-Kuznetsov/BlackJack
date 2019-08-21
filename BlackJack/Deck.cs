@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace BlackJack
 {
@@ -15,41 +12,9 @@ namespace BlackJack
 
             for (int cardName = 0, index = 0; cardName <= 8; cardName++)
             {
-                for (int cardSuit = 0; cardSuit <= 3; cardSuit++)
+                for (int cardSuit = 0; cardSuit <= 3; cardSuit++, index++)
                 {
-
-                    deck[index] = new Card { Name = ((CardName)cardName), Suit = ((Suit)cardSuit) };
-                    switch (deck[index].Name)
-                    {
-                        case CardName.Six:
-                            deck[index].Points = 6;
-                            break;
-                        case CardName.Seven:
-                            deck[index].Points = 7;
-                            break;
-                        case CardName.Eight:
-                            deck[index].Points = 8;
-                            break;
-                        case CardName.Nine:
-                            deck[index].Points = 9;
-                            break;
-                        case CardName.Ten:
-                            deck[index].Points = 10;
-                            break;
-                        case CardName.Jack:
-                            deck[index].Points = 2;
-                            break;
-                        case CardName.Queen:
-                            deck[index].Points = 3;
-                            break;
-                        case CardName.King:
-                            deck[index].Points = 4;
-                            break;
-                        case CardName.Ace:
-                            deck[index].Points = 11;
-                            break;
-                    }
-                    index++;
+                    deck[index] = new Card((CardName)cardName, (Suit)cardSuit);
                 }
             }
             return deck;

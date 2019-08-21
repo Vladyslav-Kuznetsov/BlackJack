@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace BlackJack
 {
@@ -13,17 +10,15 @@ namespace BlackJack
         public int Victory;
         public int GetTwoCards(Card[] deck, int usedCards)
         {
-            int a = usedCards + 2;                       //Переименовать а
+            int a = usedCards + 2;   //Переименовать а
+
             for (int i = usedCards; i < a; i++)
             {
                 TotalPoints += deck[i].Points;
                 usedCards++;
                 Hand += $"{deck[i].Name} {deck[i].Suit} ";
             }
-            if (TotalPoints == 21 || TotalPoints == 22)
-            {
-                Console.WriteLine("Ты выграл");
-            }
+            
             Console.WriteLine($"Your card {Hand} Sum ({TotalPoints})");
             return usedCards;
         }
@@ -39,16 +34,6 @@ namespace BlackJack
                     usedCards++;
                     Hand += $"{deck[i].Name} {deck[i].Suit} ";
                     Console.WriteLine($"Your card {Hand} Sum ({TotalPoints})");
-                    if (TotalPoints == 21)
-                    {
-                        Console.WriteLine("Ты выиграл");
-                        break;
-                    }
-                    else if (TotalPoints > 21)
-                    {
-                        Console.WriteLine("Ты проиграл");
-                        break;
-                    }
                 }
                 else if (command.ToLower() == "no")
                 {
@@ -57,7 +42,7 @@ namespace BlackJack
                 }
                 else
                 {
-                    Console.WriteLine("Неверніе данніе");
+                    Console.WriteLine("Incorrect data");
                     break;
                 }
             }

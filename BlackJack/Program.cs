@@ -7,8 +7,6 @@ namespace BlackJack
             static void Main(string[] args)
             {
                 Card[] deck = Deck.CreateDeck();
-            Deck.ShuffleDeck(deck);
-            Deck.ShowDeck(deck);
                 Player player = new Player();
                 Computer computer = new Computer();
                 bool gameOver = false;
