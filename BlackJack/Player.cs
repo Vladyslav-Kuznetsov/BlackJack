@@ -59,5 +59,11 @@ namespace BlackJack
             }
             return usedCards;
         }
+
+        public void Clear()
+        {
+            TotalPoints = 0;
+            Hand = string.Empty;
+        }
     }
 }

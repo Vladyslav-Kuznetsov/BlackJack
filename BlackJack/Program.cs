@@ -13,11 +13,8 @@ namespace BlackJack
             do
             {
                 Deck.ShuffleDeck(deck);
-                Deck.UsedCards = 0;
-                player.TotalPoints = 0;
-                computer.TotalPoints = 0;
-                player.Hand = "";
-                computer.Hand = "";
+                player.Clear();
+                computer.Clear();
                 Console.WriteLine("Who plays first? (Player/Computer)");
                 string command = Console.ReadLine();
 
@@ -34,7 +31,7 @@ namespace BlackJack
                         Deck.UsedCards = computer.GetTwoCards(deck, Deck.UsedCards);
                         Deck.UsedCards = player.GetCard(deck, Deck.UsedCards, computer, true);
                         Deck.UsedCards = computer.GetCard(deck, Deck.UsedCards, player);
-                        PointsProcessor.ChooseWinner(ref player,ref computer);
+                        PointsProcessor.ChooseWinner(ref player, ref computer);
                         break;
                     case "computer":
                         Deck.UsedCards = computer.GetTwoCards(deck, Deck.UsedCards);
@@ -47,19 +44,19 @@ namespace BlackJack
                         Deck.UsedCards = player.GetTwoCards(deck, Deck.UsedCards);
                         Deck.UsedCards = computer.GetCard(deck, Deck.UsedCards, player);
                         Deck.UsedCards = player.GetCard(deck, Deck.UsedCards, computer, false);
-                        PointsProcessor.ChooseWinner(ref player,ref computer);
+                        PointsProcessor.ChooseWinner(ref player, ref computer);
                         break;
                     default:
                         Console.WriteLine("Incorrect data");
                         break;
                 }
-                
+
             }
             while (ContinueGame(player, computer));
             Console.ReadLine();
         }
 
-        public static bool ContinueGame(Player player, Computer computer)
+        private static bool ContinueGame(Player player, Computer computer)
         {
             Console.WriteLine("Start a new game? (Yes/No)");
 

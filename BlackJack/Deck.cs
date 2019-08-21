@@ -33,15 +33,9 @@ namespace BlackJack
                 deck[i] = temp;
             }
 
-            return deck;
-        }
+            UsedCards = 0;
 
-        public static void ShowDeck(Card[] deck)
-        {
-            foreach (Card c in deck)
-            {
-                Console.WriteLine($"{c.Name} {c.Suit} {c.Points}");
-            }
+            return deck;
         }
     }
 }
