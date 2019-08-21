@@ -50,7 +50,6 @@ namespace BlackJack
                         Console.WriteLine("Incorrect data");
                         break;
                 }
-
             }
             while (ContinueGame(player, computer));
             Console.ReadLine();
@@ -71,7 +70,6 @@ namespace BlackJack
                 }
                 else if (command.ToLower() == "no")
                 {
-
                     Console.WriteLine($"Total player wins: {player.Victory}");
                     Console.WriteLine($"Total computer wins: {computer.Victory}");
                     return false;
