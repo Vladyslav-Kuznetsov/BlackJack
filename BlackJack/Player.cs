@@ -7,6 +7,7 @@ namespace BlackJack
         public int TotalPoints;
         public string Hand;
         public int Victory;
+
         public int GetTwoCards(Card[] deck, int usedCards)
         {
             int cardsToGet = usedCards + 2;   
