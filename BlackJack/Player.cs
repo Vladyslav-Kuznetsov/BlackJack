@@ -9,9 +9,9 @@ namespace BlackJack
         public int Victory;
         public int GetTwoCards(Card[] deck, int usedCards)
         {
-            int a = usedCards + 2;   
+            int cardsToGet = usedCards + 2;   
 
-            for (int i = usedCards; i < a; i++)
+            for (int i = usedCards; i < cardsToGet; i++)
             {
                 TotalPoints += deck[i].Points;
                 usedCards++;
