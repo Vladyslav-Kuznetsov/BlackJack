@@ -15,8 +15,27 @@ namespace BlackJack
                 Deck.ShuffleDeck(deck);
                 player.Clear();
                 computer.Clear();
+                bool correctData = false;
                 Console.WriteLine("Who plays first? (Player/Computer)");
                 string command = Console.ReadLine();
+
+                while (!correctData)
+                {
+                    switch (command.ToLower())
+                    {
+                        case "player":
+                            correctData = true;
+                            break;
+                        case "computer":
+                            correctData = true;
+                            break;
+                        default:
+                            Console.WriteLine("Incorrect data");
+                            Console.WriteLine("Who plays first? (Player/Computer)");
+                            command = Console.ReadLine();
+                            break;
+                    }
+                }
 
                 switch (command.ToLower())
                 {
@@ -46,9 +65,6 @@ namespace BlackJack
                         Deck.UsedCards = player.GetCard(deck, Deck.UsedCards, computer, false);
                         PointsProcessor.ChooseWinner(ref player, ref computer);
                         break;
-                    default:
-                        Console.WriteLine("Incorrect data");
-                        break;
                 }
             }
             while (ContinueGame(player, computer));
@@ -57,10 +73,9 @@ namespace BlackJack
 
         private static bool ContinueGame(Player player, Computer computer)
         {
-            Console.WriteLine("Start a new game? (Yes/No)");
-
             do
             {
+                Console.WriteLine("Start a new game? (Yes/No)");
                 string command = Console.ReadLine();
 
                 if (command.ToLower() == "yes")
