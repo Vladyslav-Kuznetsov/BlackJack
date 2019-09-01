@@ -7,6 +7,7 @@ namespace BlackJack
         public int TotalPoints;
         public string Hand;
         public int Victory;
+
         public int GetTwoCards(Card[] deck, int usedCards)
         {
             int cardsToGet = usedCards + 2;   
@@ -36,25 +37,31 @@ namespace BlackJack
                     return usedCards;
                 }
 
-                Console.WriteLine("One more card? (Yes/No)");
-                string command = Console.ReadLine();
+                bool correctData = false;
 
-                if (command.ToLower() == "yes")
+                while (!correctData)
                 {
-                    TotalPoints += deck[i].Points;
-                    usedCards++;
-                    Hand += $"{deck[i].Name} {deck[i].Suit}, ";
-                    Console.WriteLine($"Your card {Hand} Sum ({TotalPoints})");
-                }
-                else if (command.ToLower() == "no")
-                {
-                    Console.WriteLine($"Your card {Hand} Sum ({TotalPoints})");
-                    break;
-                }
-                else
-                {
-                    Console.WriteLine("Incorrect data");
-                    break;
+                    Console.WriteLine("One more card? (Yes/No)");
+                    string command = Console.ReadLine();
+
+                    if (command.ToLower() == "yes")
+                    {
+                        TotalPoints += deck[i].Points;
+                        usedCards++;
+                        Hand += $"{deck[i].Name} {deck[i].Suit}, ";
+                        Console.WriteLine($"Your card {Hand} Sum ({TotalPoints})");
+                        correctData = true;
+                    }
+                    else if (command.ToLower() == "no")
+                    {
+                        Console.WriteLine($"Your card {Hand} Sum ({TotalPoints})");
+                        correctData = true;
+                        i = deck.Length;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Incorrect data");
+                    }
                 }
             }
             return usedCards;
