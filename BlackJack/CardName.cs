@@ -2,14 +2,15 @@
 {
     public enum CardName
     {
-        Six,
+        Six = 6,
         Seven,
         Eight,
         Nine,
         Ten,
-        Jack,
+        Ace,
+        Jack = 2,
         Queen,
-        King,
-        Ace
+        King
+
     }
 }

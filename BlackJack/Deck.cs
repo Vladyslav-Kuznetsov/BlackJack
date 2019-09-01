@@ -10,11 +10,15 @@ namespace BlackJack
         {
             Card[] deck = new Card[36];
 
-            for (int cardName = 0, index = 0; cardName <= 8; cardName++)
+            for (int cardPoint = 2, index = 0; cardPoint <= 11; cardPoint++)
             {
                 for (int cardSuit = 0; cardSuit <= 3; cardSuit++, index++)
                 {
-                    deck[index] = new Card((CardName)cardName, (Suit)cardSuit);
+                    if (cardPoint == 5)
+                    {
+                        break;
+                    }
+                    deck[index] = new Card(cardPoint, (Suit)cardSuit);
                 }
             }
 
