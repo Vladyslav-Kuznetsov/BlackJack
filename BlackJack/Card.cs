@@ -6,11 +6,11 @@
         public CardName Name;
         public Suit Suit;
 
-        public Card(int points, Suit suit)
+        public Card(CardName cardName, Suit suit)
         {
-            Points = points;
             Suit = suit;
-            Name = (CardName)Points;
+            Name = cardName;
+            Points = (int)cardName;
         }
     }
 }

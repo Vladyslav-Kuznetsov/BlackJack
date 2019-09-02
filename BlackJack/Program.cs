@@ -68,7 +68,6 @@ namespace BlackJack
                 }
             }
             while (ContinueGame(player, computer));
-
             Console.ReadLine();
         }
 
