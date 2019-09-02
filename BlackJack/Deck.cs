@@ -12,14 +12,13 @@ namespace BlackJack
 
             for (int cardName= 2, index = 0; cardName <= 11; cardName++)
             {
-                if (cardName == 5)
+                if (cardName != 5)
                 {
-                    continue;
-                }
+                    for (int cardSuit = 0; cardSuit <= 3; cardSuit++, index++)
+                    {
+                        deck[index] = new Card((CardName)cardName, (Suit)cardSuit);
+                    }
 
-                for (int cardSuit = 0; cardSuit <= 3; cardSuit++, index++)
-                {
-                    deck[index] = new Card((CardName)cardName, (Suit)cardSuit);
                 }
             }
 
